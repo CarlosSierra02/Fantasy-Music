@@ -1,20 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content> 
+  <ion-slides pager="true" class="estilos_slide" [options] = "slideOpt">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-slide> <!-- SLIDE 1-->
+      <img class="imagen_slide1" src="assets/images/slide_1.png"/>
+      <h1> FANTASY MUSIC</h1>
+	    <p> Bienvenido a la mejor aplicación de música en Colombia.</p>
+    </ion-slide>
+    
+    <ion-slide> <!-- SLIDE 2 -->
+      <img class="imagen_slide2" src="assets/images/slide_2.png"/>
+      <h1> ESCUCHA</h1>
+ 	    <p> Descubre a tus artistas favoritos, divierte mientras escuchas música y creas buenos momentos.</p>
+    </ion-slide>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-slide> <!-- SLIDE 3 -->
+      <img class="imagen_slide3" src="assets/images/slide_3.png"/>
+      <h1> CREA TU CUENTA</h1>
+      <p> Ten una mayor seguridad y guarda tus preferencias. </p>
+    </ion-slide>
+
+    <ion-slide> <!-- SLIDE 4 -->
+      <ion-icon name="close"></ion-icon>
+      <img class="imagen_slide4" src="assets/images/slide_4.png"/>
+      <h1> FAVORITOS</h1>
+      <p> Añade a favortios a todos tus artistas y canciones, para una mayor facilidad de busqueda.</p>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

@@ -1,27 +1,50 @@
-#container {
-  text-align: center;
+// Importación de fuentes desde Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-slides {
+  height: 100%;
+  background-color: var(--slide-color-background);
+  max-width: 800px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.swiper-slide {
+   display: block;
+   margin-bottom: 60px;
+   background-color: var(--slide-color-background);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-slide > ion-icon[name="close"]{
+  float: right;
+  color: white;
+  font-size: 25px;
+  margin: 25px 20px 15px 15px;
 }
 
-#container a {
-  text-decoration: none;
+ion-slide >h1 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 35px;
+}
+
+.imagen_slide1{
+  margin-top: 50px;
+}
+
+.imagen_slide2{
+  margin-top: 100px;
+}
+
+.imagen_slide3{
+  margin-top: 65px;
+  height: 250px;
+}
+
+.imagen_slide4{
+  margin-top: 0px;
+  height: 250px;
+}
+
+ion-slide > p{
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 5px;
 }
