@@ -1,0 +1,11 @@
+<ion-content> 
+  <ion-slides pager="true" class="estilos_slide" [options] = "slideOpt">
+
+    <ion-slide *ngFor="let slide of slides"> <!-- SLIDES DINAMICOS-->
+      <ion-icon name={{slide.icon}} (click)="finish()" ></ion-icon>
+      <img class={{slide.clase}} src={{slide.img}}/>
+      <h1>{{slide.title}}</h1>
+	    <p>{{slide.description}}</p>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

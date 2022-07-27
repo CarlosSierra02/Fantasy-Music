@@ -1,0 +1,50 @@
+// Importación de fuentes desde Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+ion-slides { // Estilos generales del slide
+  height: 100%;
+  background-color: var(--slide-color-background); // Variable creada
+  max-width: 800px;
+}
+
+.swiper-slide { // Estilos del swiper slide
+   display: block;
+   margin-bottom: 60px;
+   background-color: var(--slide-color-background); // Variable creada
+}
+
+ion-slide > ion-icon[name="close"] { // Estilo del icono (X) para cerrar
+  float: right;
+  color: white;
+  font-size: 25px;
+  margin: 25px 20px 15px 15px;
+}
+
+ion-slide >h1 { // Estilo titulo
+  font-family: 'Secular One', sans-serif;
+  font-size: 35px;
+}
+
+.imagen_slide1 { // Estilo imagene del slide 1
+  margin-top: 50px;
+}
+
+.imagen_slide2 { // Estilo imagene del slide 1
+  margin-top: 101px;
+}
+
+.imagen_slide3 { // Estilo imagene del slide 1
+  margin-top: 91px;
+  height: 250px;
+}
+
+.imagen_slide4 { // Estilo imagene del slide 1
+  margin-top: 26px;
+  height: 250px;
+}
+
+ion-slide > p { // Estilo imagene del slide 1
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 5px;
+}

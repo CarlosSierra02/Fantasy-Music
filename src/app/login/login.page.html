@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">login</ion-title> <!-- Título centrado -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)"> <!-- Creación del formulario -->
+
+  <ion-item> <!-- Label e input de email -->
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input placeholder="example@example.com" formControlName="email"></ion-input>
+  </ion-item>
+
+  <div class="Message"> <!-- Validacion del email-->
+    <ng-container *ngFor="let validation of validation_messages.email">
+      <div
+       *ngIf="
+         loginForm.get('email').hasError(validation.type) &&
+         (loginForm.get('email').dirty) ||
+         loginForm.get('email').touched)
+       "
+      >
+       {{validation.message}}
+      </div>
+
+    </ng-container>
+  </div>
+
+  <ion-item> <!-- label e input de la contraseña --> 
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input placeholder="Contraseña" formControlName="password"></ion-input>
+  </ion-item>
+
+  <div class="Message"> <!-- Validacion de la contraseña -->
+    <ng-container *ngFor="let validation of validation_messages.password">
+      <div
+       *ngIf="
+         loginForm.get('password').hasError(validation.type) &&
+         (loginForm.get('password').dirty) ||
+         loginForm.get('password').touched)
+       "
+      >
+       {{validation.message}}
+      </div>
+
+  <ion-button
+  expand="full"
+  shape="round"
+  color="tertiary"
+  [disabled]="!loginForm.valid"
+  type="submit"
+>Login</ion-button>
+</form>
+{{errorMessage}}
+
+</ion-content>
+
+<ion-footer><ion-button
+  expand="full"
+  shape="round"
+  color="secondary"
+  (click) = "goToRegister()"
+  >Registrate</ion-button>
+  </ion-footer>
