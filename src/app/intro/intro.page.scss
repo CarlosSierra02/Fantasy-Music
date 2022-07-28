@@ -11,12 +11,12 @@ ion-slides { // Estilos generales del slide
 .swiper-slide { // Estilos del swiper slide
    display: block;
    margin-bottom: 60px;
-   background-color: var(--slide-color-background); // Variable creada
+   background-color: var(--slide-color-background); // Variable creada o custom
 }
 
 ion-slide > ion-icon[name="close"] { // Estilo del icono (X) para cerrar
   float: right;
-  color: white;
+  color: var(--ion-color-medium-contrast); // Variable credad o custom
   font-size: 25px;
   margin: 25px 20px 15px 15px;
 }

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup ,Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
 import { Storage } from "@ionic/storage";
-
 
 @Component({
   selector: 'app-login',
@@ -13,27 +12,25 @@ import { Storage } from "@ionic/storage";
 export class LoginPage implements OnInit {
 
   loginForm: FormGroup;
-
   validation_messages = {
     email: [
-      {type: "required", message: "El email es obligatorio"},
-      {type: "pattern", message: "El email no es valido"}
-    ], // Mensaje de validación del email
+      { type: "require", message: "El email es obligatorio" },
+      { type: "pattern", message: "El email no es valido" }
+    ],
+    
+    password:[
+      {type:"required", message: "El password es obligatorio"},
+      {type:"minLength", message:"El password no es valido"}
+    ]
+  };
 
-    password: [
-      {type: "required", message: "La contraseña es obligatoria"},
-      {type: "minlength", message: "La contraseña no es valida"}
-    ] // Mensaje de validación de la contraseña
-  }; 
+  errorMessage: any;
 
-  errorMessage: String;
 
-  constructor(
-    private formBuilder: FormBuilder, 
+  constructor(private formBuilder: FormBuilder, 
     private authService: AuthenticateService,
     private navCtrl: NavController,
-    private storage: Storage
-    ) { 
+    private storage: Storage) { 
 
     this.storage.create();
 
@@ -41,19 +38,21 @@ export class LoginPage implements OnInit {
       
       email: new FormControl(
         "",
-        Validators.compose([
+        Validators.compose([  
           Validators.required,
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]+$")
-        ]) // Creación de validaciones del email
+        ])
       ),
+
       password: new FormControl(
-      "",
-      Validators.compose([
-        Validators.required,
-        Validators.minLength(6)
-      ]) // Creación de validaciones de la contraseñá
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(6)
+        ])
       )
     })
+
   }
 
   ngOnInit() {
@@ -63,14 +62,14 @@ export class LoginPage implements OnInit {
     this.authService.loginUser(credentials).then( res => {
       this.errorMessage = "";
       this.storage.set("isUserLoggedIn", true)
-      this.navCtrl.navigateForward("/home");
+      this.navCtrl.navigateForward("/menu");
     }).catch( err => {
       this.errorMessage = err;
     })
   }
 
-    goToRegister() {
+  goToRegister() {
     this.navCtrl.navigateForward("/register");
-    } 
+  }
 
 }
