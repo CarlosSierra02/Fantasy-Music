@@ -16,21 +16,24 @@ export class LoginPage implements OnInit {
 
   validation_messages = {
     email: [
-      {type: "require", message: "El email es obligatorio"},
+      {type: "required", message: "El email es obligatorio"},
       {type: "pattern", message: "El email no es valido"}
     ], // Mensaje de validación del email
 
     password: [
-      {type: "require", message: "La contraseña es obligatoria"},
-      {type: "minLength", message: "La contraseña no es valida"}
+      {type: "required", message: "La contraseña es obligatoria"},
+      {type: "minlength", message: "La contraseña no es valida"}
     ] // Mensaje de validación de la contraseña
   }; 
 
   errorMessage: String;
 
-  constructor(private formBuilder: FormBuilder, 
+  constructor(
+    private formBuilder: FormBuilder, 
     private authService: AuthenticateService,
-    private navCtrl: NavController, private storage: Storage) { 
+    private navCtrl: NavController,
+    private storage: Storage
+    ) { 
 
     this.storage.create();
 
@@ -66,8 +69,8 @@ export class LoginPage implements OnInit {
     })
   }
 
-  /* goToRegister() {
+    goToRegister() {
     this.navCtrl.navigateForward("/register");
-    } */
+    } 
 
 }

@@ -10,9 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: "home",
-        loadChildren:() =>
+        loadChildren:() => 
           import("../home/home.module").then(m => m.HomePageModule)
-      }
+      },
+      
+      {
+        path: "",
+        redirectTo: "home",
+        pathMatch: "full"
+        
+      },
     ]
     }
 ];

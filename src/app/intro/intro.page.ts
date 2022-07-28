@@ -54,9 +54,9 @@ export class IntroPage implements OnInit {
 
    ngOnInit(): void {
     this.showe().then( x => {
-      //console.log(x)
+      console.log(x)
       if (x) {
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/menu/home")
       }
     })
    }
@@ -68,7 +68,7 @@ export class IntroPage implements OnInit {
 
   finish() { /* Codigo del icono (x) */
     this.storage.set("isIntroShowed", true);
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/menu/home");
   }
 
 }

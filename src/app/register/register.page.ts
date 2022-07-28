@@ -15,23 +15,23 @@ export class RegisterPage implements OnInit {
 
   validation_messages = {
     name: [
-      {type: "require", message: "El Nombre es obligatorio"},
-      {type: "minLength", message: "El Nombre no es valido"}
+      {type: "required", message: "El Nombre es obligatorio"},
+      {type: "minlength", message: "El Nombre no es valido"}
     ], // Mensaje de validación del email
 
     last_name: [
-      {type: "require", message: "El apellido es obligatoria"},
-      {type: "minLength", message: "El apellido no es valida"}
+      {type: "required", message: "El apellido es obligatoria"},
+      {type: "minlength", message: "El apellido no es valida"}
     ], // Mensaje de validación de la contraseña
 
     email: [
-      {type: "require", message: "El email es obligatoria"},
+      {type: "required", message: "El email es obligatoria"},
       {type: "pattern", message: "El email no es valida"}
     ], // Mensaje de validación de la contraseña
 
     password: [
-      {type: "require", message: "La contraseñá es obligatoria"},
-      {type: "minLength", message: "La contraseña no es valida"}
+      {type: "required", message: "La contraseñá es obligatoria"},
+      {type: "minlength", message: "La contraseña no es valida"}
     ] // Mensaje de validación de la contraseña
 }; 
 
@@ -53,7 +53,7 @@ export class RegisterPage implements OnInit {
           Validators.required
         ]) // Creación de validaciones del Nombre
       ),
-      lastname: new FormControl(
+      last_name: new FormControl(
         "",
         Validators.compose([
           Validators.required
@@ -86,7 +86,7 @@ export class RegisterPage implements OnInit {
   }
  
   goToLogin() {
-    this.navCtrl.navigateBack("/login")
+    this.navCtrl.navigateBack("/login");
   }
 
 }
